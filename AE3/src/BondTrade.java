@@ -11,7 +11,7 @@ public class BondTrade
    {
       this.filePath = filePath;
    }
-
+   //method to return field names, it reads only the first line, where the field names will be located and stores them in an array
    public String[] getFieldNames(String filePath)
    {
       File file = new File(filePath);
@@ -29,7 +29,7 @@ public class BondTrade
       }
       return values;
    }
-
+   //method to return the values in the first column after field names and store them in an arraylist
    public ArrayList<Double> getFirstCol(String filePath)
    {
       File file = new File(filePath);
@@ -53,10 +53,11 @@ public class BondTrade
       return parsedValues;
    }
 
-   public ArrayList<Integer> getSecondCol(String filePath)
+   //method to return the values in the second column after field names
+   public ArrayList<Double> getSecondCol(String filePath)
    {
       File file = new File(filePath);
-      ArrayList<Integer> parsedValues = new ArrayList<Integer>();
+      ArrayList<Double> parsedValues = new ArrayList<Double>();
       try
       {
          Scanner inputStream = new Scanner(file);
@@ -65,7 +66,7 @@ public class BondTrade
          {
             String data = inputStream.next();
             String[] values = data.split(",");
-            parsedValues.add(Integer.parseInt(values[1]));
+            parsedValues.add(Double.parseDouble(values[1]));
          }
          inputStream.close();
       }
@@ -75,11 +76,11 @@ public class BondTrade
       }
       return parsedValues;
    }
-
-   public ArrayList<Integer> getThirdCol(String filePath)
+   //method to return the values in the third column after field names
+   public ArrayList<Double> getThirdCol(String filePath)
    {
       File file = new File(filePath);
-      ArrayList<Integer> parsedValues = new ArrayList<Integer>();
+      ArrayList<Double> parsedValues = new ArrayList<Double>();
       try
       {
          Scanner inputStream = new Scanner(file);
@@ -88,7 +89,7 @@ public class BondTrade
          {
             String data = inputStream.next();
             String[] values = data.split(",");
-            parsedValues.add(Integer.parseInt(values[2]));
+            parsedValues.add(Double.parseDouble(values[2]));
          }
          inputStream.close();
       }
