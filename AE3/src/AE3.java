@@ -22,7 +22,7 @@ public class AE3 extends JFrame
       
 
       this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      this.setSize(600, 800);
+      this.setSize(550, 600);
       this.setLocationRelativeTo(null);
       this.setVisible(true);
    }

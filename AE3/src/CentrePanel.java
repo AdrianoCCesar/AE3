@@ -16,7 +16,7 @@ public class CentrePanel extends JComponent
    private ArrayList<Double> yValues;
    private Graphics2D g;
    private SouthPanel southPanel;
-//   private JPanel graphPanel;
+   private JPanel graphPanel;
 
    public CentrePanel(SouthPanel southPanel)
    {
@@ -34,11 +34,12 @@ public class CentrePanel extends JComponent
 //      this.setBorder(border);
       // Creating a plot component(graph) and adding it to the this panel
       plotComponent = new PlotComponent();
-//      graphPanel = new JPanel();
-//      graphPanel.setSize(new Dimension(400, 400));
-//      graphPanel.add(plotComponent);
+      graphPanel = new JPanel();
+      graphPanel.setSize(new Dimension(400, 400));
+      graphPanel.setBorder(BorderFactory.createCompoundBorder(inner,outer));
+      graphPanel.add(plotComponent);
       
-      this.add(plotComponent, BorderLayout.CENTER);
+      this.add(graphPanel, BorderLayout.CENTER);
    }
    //method to set south panel, has to be done because centre and south need to exist at the same time
    public void setSouthPanel(SouthPanel southPanel)
