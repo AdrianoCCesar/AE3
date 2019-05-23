@@ -1,2 +1,2 @@
 # AE3
-## an assignment I suck at
+## Assignment with a GUI to read the values of a CSV file with values in the first 3 columns
